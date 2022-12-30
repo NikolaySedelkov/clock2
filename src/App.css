@@ -2,37 +2,73 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#form-locate > *{
+  display: inline-block;
+  margin-left: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.error{
+  box-shadow: 0 0 5px red;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#conteiner-clocks{
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 50px;
+  box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+.clock-circle{
+  margin: 20px;
+  padding: 5%;
+  box-sizing: border-box;
+  width: 90%;
+  aspect-ratio: 1/1;
+  border-radius: 500px;
+  border: 1px solid black;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button-delete-clock{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: palevioletred;
+  border: 1px solid red;
+  top: calc(14.6% - 15px);
+  right: calc(14.6% - 15px);
+  box-sizing: border-box;
+  transition: 1s transform;
+}
+
+.button-delete-clock:hover{
+  background-color: red;
+  border: 5px solid palevioletred;
+  line-height: 14px;
+  transform: rotate(180deg);
+  transition: 1s;
+}
+
+.arrow-time{
+  position: absolute;
+  transform-origin: bottom;
+  width: 1px;
+  background-color: black;
+  right: 50%;
+  bottom: 50%;
+}
+
+.hour-time{
+  height: 30%;
+}
+
+.minutes-time{
+  height: 45%;
+}
+
+.seconds-time{
+  height: 50%;
 }
