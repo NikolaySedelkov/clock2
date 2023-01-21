@@ -10,11 +10,7 @@ class TimeBlock extends React.Component{
         this.state = {
             time: new Date()
         }
-        const {zone, currentZone, func} = this.props;
-        this.zone           = parseInt(zone.timeZone.slice(3, zone.timeZone.length));
-        this.name           = zone.name;
-        this.currentZone    = currentZone;
-        this.func           = func;
+        this.zone           = parseInt(this.props.zone.timeZone.slice(3, this.props.zone.timeZone.length));
     }
 
     makeTime(){
@@ -48,11 +44,12 @@ class TimeBlock extends React.Component{
     }
 
     render(){
+        const p = this.props;
         return(
             <div>
-                <h5>{this.name}</h5>
+                <h5>{p.zone.name}</h5>
                 <div className="clock-circle">
-                    <div className="button-delete-clock" onClick={(e)=>{this.func(this.name)}}>x</div>
+                    <div className="button-delete-clock" onClick={(e)=>{p.func(p.zone.name)}}>x</div>
                     <div className="arrow-time hour-time" ref={this.hourArrow}></div>
                     <div className="arrow-time minutes-time" ref={this.minutesArrow}></div>
                     <div className="arrow-time seconds-time" ref={this.secondsArrow}></div>

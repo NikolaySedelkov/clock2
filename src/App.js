@@ -19,7 +19,9 @@ function App() {
       setTimeZone([...timeZones, zone]);
   }
   const deltimeZone = zone => {
-    setTimeZone(timeZones.filter(z => z.name !== zone));
+    setTimeZone(timeZones.filter(z => {
+      return z.name != zone
+    }));
   }
   return (
     <div className="App">
