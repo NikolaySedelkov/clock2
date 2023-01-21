@@ -42,7 +42,7 @@ function Form({func}){
             </div>
 
             <div>
-                <label htmlFor="time-locate">Временная зона</label><br/>
+                <label htmlFor="time-locate">Временная зона(<i>формат: GMT +/- dd</i>)</label><br/>
                 <input id="time-locate" type="text" value={value.timeZone} onChange={patternGMT} className={wrong?"error":null}/>
             </div>
 
